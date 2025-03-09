@@ -1,0 +1,15 @@
+<svg version="1.0" width="458.003" height="248.06" viewBox="0 0 458.003 248.06"
+   preserveAspectRatio="xMidYMid" xmlns="http://www.w3.org/2000/svg">
+   <path
+      style="fill:#2b2d2f;fill-opacity:1;stroke:#2b2d2f;stroke-width:.705634;stroke-linejoin:round;stroke-opacity:1"
+      d="M229.001 7.517a120.08 120.08 0 0 0-120.08 120.08A120.08 120.08 0 0 0 229 247.677a120.08 120.08 0 0 0 120.081-120.08 120.08 120.08 0 0 0-120.08-120.08Zm0 2.019a117.823 117.823 0 0 1 117.824 117.822 117.823 117.823 0 0 1-117.823 117.823 117.823 117.823 0 0 1-117.824-117.823A117.823 117.823 0 0 1 229.001 9.536Z" />
+   <text xml:space="preserve"
+      style="font-size:19.7549px;fill:#2b2d2f;fill-opacity:1;stroke:#2b2d2f;stroke-width:.697596;stroke-linejoin:round;stroke-opacity:1"
+      x="221.801" y="35.206"><tspan style="font-size:19.7549px;fill:#2b2d2f;fill-opacity:1;stroke:#2b2d2f;stroke-width:.697596;stroke-opacity:1" x="221.801" y="35.206">N</tspan></text>
+   <path
+      d="M225.514 3.566s-2.549 3.879-5.313 3.879h16.675c-2.799 0-5.68-3.704-5.68-3.704L228.264.037z"
+      style="fill:#2b2d2f;fill-opacity:1;stroke:#2b2d2f;stroke-width:.0823122;stroke-opacity:1" />
+   <path
+      style="fill:#2b2d2f;fill-opacity:1;stroke:#2b2d2f;stroke-width:.723281;stroke-linejoin:round;stroke-opacity:1"
+      d="M229.002 45.51c-45.336 0-82.089 36.751-82.089 82.088 0 45.335 36.753 82.087 82.089 82.086 45.335 0 82.087-36.751 82.087-82.086 0-45.336-36.751-82.088-82.087-82.089z" />
+</svg>
