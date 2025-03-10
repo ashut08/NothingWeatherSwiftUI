@@ -11,7 +11,7 @@ struct HomeView: View {
     @StateObject var locationManager = LocationManager()
     var body: some View {
         NavigationStack {
-            if(locationManager.isLocationGranted){
+            if(!locationManager.isLocationGranted){
                 MainView()
             }else{
                 ErroView()
@@ -21,8 +21,8 @@ struct HomeView: View {
 
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("Location").customFont(.bold,18)
-                    .font(.custom("RobotoMono-Bold.ttf", size: 14))// Customize text color
+                Text( locationManager.isLocationGranted ? "Error".uppercased(with: .autoupdatingCurrent) : "Location".lowercased(with: .autoupdatingCurrent)).customFont(.bold,18).customFont(.bold,14)
+              
                        }
                        
             // Leading item
@@ -46,6 +46,8 @@ struct HomeView: View {
             locationManager.requestLocation()
         }
     }
+    
+  
     
     
     
