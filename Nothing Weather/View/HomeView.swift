@@ -11,8 +11,8 @@ struct HomeView: View {
     @StateObject var locationManager = LocationManager()
     var body: some View {
         NavigationStack {
-            if(!locationManager.isLocationGranted){
-                MainView()
+            if(locationManager.isLocationGranted){
+                MainView(weatherRepository: WeatherRepositoryImpl())
             }else{
                 ErroView()
             }
@@ -21,7 +21,7 @@ struct HomeView: View {
 
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text( locationManager.isLocationGranted ? "Error".uppercased(with: .autoupdatingCurrent) : "Location".lowercased(with: .autoupdatingCurrent)).customFont(.bold,18).customFont(.bold,14)
+                Text( !locationManager.isLocationGranted ? "Error".uppercased(with: .autoupdatingCurrent) : "Location".lowercased(with: .autoupdatingCurrent)).customFont(.bold,18).customFont(.bold,14)
               
                        }
                        
