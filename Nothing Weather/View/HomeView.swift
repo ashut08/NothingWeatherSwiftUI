@@ -27,7 +27,9 @@ struct HomeView: View {
                        
             // Leading item
             ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {}, label: {
+                Button(action: {
+                    
+                }, label: {
                     Image(systemName: "line.horizontal.3")
                                            .imageScale(.large)
                                            .foregroundColor(.white)
@@ -37,7 +39,9 @@ struct HomeView: View {
             
             // Trailing item
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {}, label: {
+                Button(action: {
+                    
+                }, label: {
                     CustomImageView(imageName: "settings",width: 30,height: 30)
                     
                 })

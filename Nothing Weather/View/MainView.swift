@@ -3,6 +3,8 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var viewModel: WeatherViewModel
     @StateObject var locationManager = LocationManager()
+    @State private var showNavigationBar = true
+        @State private var scrollOffset: CGFloat = 0
     
     @State private var hasFetchedLocation = false // Flag to track if the API has been called
     
@@ -18,22 +20,33 @@ struct MainView: View {
             Text(viewModel.errorMessage ?? "Error")
         }
         else {
-            VStack {
-                Text(viewModel.weather?[0].mobileLink ?? "Loading...").customFont(.regular, 20)
+            NavigationView {
                 
-                Text("Hello, SwiftUI!").customFont(.regular, 12)
-                Text("Hello, SwiftUI!").customFont(.bold, 20)
-                CustomImageView(imageName: "error", width: 100, height: 100)
-            }
+                
+                ScrollView{
+                    
+                    VStack {
+                        Spacer(minLength: 100)
+                        
+                        CustomImageView(imageName: getSystemImagePath(text: viewModel.weather?[0].weatherText?.lowercased() ?? "cloud", isDayTime: (viewModel.weather?[0].isDayTime ?? false)), width: 130, height: 130)
+                        
+                        Text(viewModel.weather?[0].weatherText ?? "NA")
+                        
+                        InsigtsView(viewModel: viewModel)
+                    }
+                }            }
             .onAppear {
                 // Ensure the fetch only happens once
                 if !hasFetchedLocation {
                     Task {
-                        await viewModel.fetchLocationKey(lat: locationManager.location?.latitude ?? 30.70, long: locationManager.location?.longitude ?? 76.71)
+                        await viewModel.fetchLocationKey(lat:   30.70, long:  76.71)
                         hasFetchedLocation = true // Set the flag to true after the API call
                     }
                 }
             }
         }
     }
+}
+#Preview {
+    MainView(weatherRepository: WeatherRepositoryImpl() )
 }

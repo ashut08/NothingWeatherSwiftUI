@@ -11,7 +11,11 @@ struct WeatherDataModelElement: Codable {
     var isDayTime: Bool?
     var temperature: Temperature?
     var mobileLink, link: String?
-    var category: String?  // Dynamically handle category as a string
+    var category: String?
+    var uvIndex: Int?
+     var uvIndexText: String?
+    
+    // Dynamically handle category as a string
 
     enum CodingKeys: String, CodingKey {
         case localObservationDateTime = "LocalObservationDateTime"
@@ -24,7 +28,11 @@ struct WeatherDataModelElement: Codable {
         case temperature = "Temperature"
         case mobileLink = "MobileLink"
         case link = "Link"
-        case category = "Category"  // Category field handled dynamically
+        case category = "Category"
+        case uvIndex = "UVIndex"
+        case uvIndexText = "UVIndexText"
+        
+        // Category field handled dynamically
     }
 
     // Custom initializer to decode `LocalObservationDateTime` as a String and convert it to Date
@@ -46,6 +54,10 @@ struct WeatherDataModelElement: Codable {
         mobileLink = try container.decodeIfPresent(String.self, forKey: .mobileLink)
         link = try container.decodeIfPresent(String.self, forKey: .link)
         category = try container.decodeIfPresent(String.self, forKey: .category)
+        uvIndex=try container.decodeIfPresent(Int.self, forKey: .uvIndex)
+        uvIndexText = try container.decodeIfPresent(String.self, forKey: .uvIndexText)
+        
+        
     }
 }
 

@@ -20,7 +20,7 @@ class WeatherViewModel: ObservableObject {
 
     func fetchWeather(cityKey: String) async {
         do {
-            let weatherData = try await weatherRepository.fetchWeatherData(for: cityKey)
+            let weatherData = try await weatherRepository.fetchWeatherData(for: cityKey, for: true)
             DispatchQueue.main.async {
                 self.weather = weatherData
             }

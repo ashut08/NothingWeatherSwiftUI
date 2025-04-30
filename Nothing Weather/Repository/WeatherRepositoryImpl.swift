@@ -9,9 +9,9 @@
 class WeatherRepositoryImpl: WeatherRepository{
 
     
-    var apiKey=""
+    var apiKey="zxNmE9P8iaNZiyUHkq0zQHfFD51Dq2aR" //put your api key here
     
-    func fetchWeatherData(for key: String) async throws -> WeatherDataModel {
+    func fetchWeatherData(for key: String, for details: Bool) async throws -> WeatherDataModel {
         let weatherData = try await WeatherManager.getWeatherData(cityKey: key, apiKey: apiKey)
         return weatherData
 
